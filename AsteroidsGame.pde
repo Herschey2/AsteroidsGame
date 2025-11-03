@@ -12,7 +12,6 @@ public void setup()
     stars[i]=new Star();
   }
   bob = new Spaceship();
-  surface.setResizable(true);
 }
 public void draw() 
 {
