@@ -17,5 +17,17 @@
 	    <footer>
 		    Move with w, turn right with a, turn left with d, press h to hyperspace.
 	    </footer>
+		<script>
+			var sound1 = new Audio('thrust.wav');
+			var playSound = function() {
+			    if(accelerate){
+			       sound1.play();
+			    }
+			};
+			
+			playSound();
+			
+		</script>
 	</body>
 </html>
+
