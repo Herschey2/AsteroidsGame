@@ -8,46 +8,14 @@
 	</head>
 	<body>
 		<header>
-			var sound1 = new Audio('thrust.wav');
-			sound1.loop = true;
-			var procInstance = null;
-			function checkThrustSound() {
-			  if (!procInstance) {
-			    if (typeof Processing !== 'undefined' && Processing.getInstanceById) {
-			      procInstance = Processing.getInstanceById('AsteroidsGame');
-			    }
-			  }
-			  var thrusting = false;
-			  if (procInstance) {
-			    try {
-			      thrusting = !!procInstance.forward;
-			    } catch(e) {
-			      thrusting = false;
-			    }
-			  }
-			  if (thrusting) {
-			    if (sound1.paused) {
-			      sound1.play();
-			    }
-			  } else {
-			    if (!sound1.paused) {
-			      sound1.pause();
-			      sound1.currentTime = 0;
-			    }
-			  }
-			}
-			setInterval(checkThrustSound, 100);
+			<h1>Asteroids</h1>
+		</header>
+			<section id="content">
+				<canvas id="AsteroidsGame" data-processing-sources="AsteroidsGame.pde Floater.pde Spaceship.pde Star.pde">
+				</canvas>
+		    </section>
+	    <footer>
+		    Move with w, turn right with a, turn left with d, press h to hyperspace.
 	    </footer>
-		<script>
-			var sound1 = new Audio('thrust.wav');
-			var playSound = function() {
-			    if(accelerate){
-			       sound1.play();
-			    }
-			};
-			
-			playSound();
-			
-		</script>
 	</body>
 </html>
