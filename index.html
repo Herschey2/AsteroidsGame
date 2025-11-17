@@ -8,22 +8,17 @@
 	</head>
 	<body>
 		<header>
-			// Play/pause thrust sound based on the Processing sketch's `forward` boolean.
-			// The previous code referenced `accelerate` which is not in the page scope.
-			// We poll the Processing instance and play/stop the sound accordingly.
 			var sound1 = new Audio('thrust.wav');
 			sound1.loop = true;
 			var procInstance = null;
 			function checkThrustSound() {
 			  if (!procInstance) {
-			    // Try to obtain the Processing instance for the canvas
 			    if (typeof Processing !== 'undefined' && Processing.getInstanceById) {
 			      procInstance = Processing.getInstanceById('AsteroidsGame');
 			    }
 			  }
 			  var thrusting = false;
 			  if (procInstance) {
-			    // The sketch uses `forward` to track accelerating/thrusting
 			    try {
 			      thrusting = !!procInstance.forward;
 			    } catch(e) {
@@ -32,7 +27,6 @@
 			  }
 			  if (thrusting) {
 			    if (sound1.paused) {
-			      // play() returns a promise in some browsers; ignore result
 			      sound1.play();
 			    }
 			  } else {
@@ -42,7 +36,6 @@
 			    }
 			  }
 			}
-			// Poll at 100ms; this is lightweight and reliable even if the Processing instance isn't ready immediately
 			setInterval(checkThrustSound, 100);
 	    </footer>
 		<script>
