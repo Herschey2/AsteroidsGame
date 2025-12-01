@@ -9,8 +9,8 @@ class Asteroids extends Floater
       for (int i = 0; i < corners; i++) {
         xCorners[i]*=mySize;
         yCorners[i]*=mySize;
-        xCorners[i] +=((int)(Math.random()*5)-10)*mySize;
-        yCorners[i] +=((int)(Math.random()*5)-10)*mySize;
+        xCorners[i] +=((int)(Math.random()*10)-10)*mySize;
+        yCorners[i] +=((int)(Math.random()*10)-10)*mySize;
       }
       myCenterX=(int)(Math.random()*width);
       myCenterY=(int)(Math.random()*height);
